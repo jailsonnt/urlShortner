@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+	<Properties>
+		<Property name="log-path">logs</Property>
+		<Property name="archive">${log-path}/archive</Property>
+	</Properties>
+	<Appenders>
+		<Console name="Console-Appender" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>
+					[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				</pattern>
+			</PatternLayout>
+		</Console>
+		<RollingFile name="File-Appender"
+			fileName="${log-path}/url-shortener.log"
+			filePattern="${archive}/[%d{yyyy-MM-dd HH-mm-ss}] sattra-web.log">
+			<PatternLayout>
+				<pattern>
+					[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="all">
+			<AppenderRef ref="Console-Appender" level="info" />
+			<AppenderRef ref="File-Appender" level="info" />
+		</Root>
+	</Loggers>
+</Configuration>

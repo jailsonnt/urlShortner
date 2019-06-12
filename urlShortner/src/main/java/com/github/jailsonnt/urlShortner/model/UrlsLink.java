@@ -18,6 +18,9 @@ public class UrlsLink {
 	private String createdURL;
 	private Date expirationDate;
 	
+	public UrlsLink() {
+	}
+	
 	public UrlsLink(String originalURL) {
 		this.originalURL = originalURL;
 	}
