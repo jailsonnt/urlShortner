@@ -7,8 +7,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -20,7 +18,6 @@ import com.github.jailsonnt.urlShortner.services.exceptions.UrlNotFoundException
 
 @Service
 public class UrlShortenerService implements IUrlShortnerService, IUrlFinder {
-	private Logger logger = LogManager.getLogger(getClass());
 	private UrlsLinkRepository repositorio;
 	@Value("${urlShortener.days-of-validity-of-Url:5}")
 	private int defaultValidity;

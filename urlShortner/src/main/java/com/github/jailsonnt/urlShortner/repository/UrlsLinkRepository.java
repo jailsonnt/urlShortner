@@ -11,7 +11,4 @@ import com.github.jailsonnt.urlShortner.model.UrlsLink;
 public interface UrlsLinkRepository extends JpaRepository<UrlsLink, Long> {
 	@Query("SELECT u FROM UrlsLink u WHERE u.originalURL = ?1 and u.expirationDate > ?2")
 	public Optional<List<UrlsLink>> findByOriginalURLAndExpirationDate(String originalURL, Date now);
-	
-	//Before findByStartDateBefore … where x.startDate < ?1
-	
 }

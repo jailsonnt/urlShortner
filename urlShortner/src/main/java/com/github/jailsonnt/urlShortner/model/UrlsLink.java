@@ -13,7 +13,7 @@ public class UrlsLink {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", updatable = false, nullable = false)
-	private Long id;
+	protected Long id;
 	private String originalURL;
 	private String createdURL;
 	private Date expirationDate;
